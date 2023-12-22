@@ -13,8 +13,8 @@ const { t } = useI18n();
 
 const location = useLocation();
 
-const title = computed(() => t('welcome'));
 const currentLocation = await location.getLocation();
+const title = computed(() => t('welcome'));
 
 </script>
 
