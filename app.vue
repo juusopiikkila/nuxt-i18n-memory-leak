@@ -1,21 +1,18 @@
 <template>
     <div>
         {{ title }}
-
-        <pre>{{ currentLocation }}</pre>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { useLocation } from './store/location';
+import { useStore } from './store/store';
 
 const { t } = useI18n();
 
-const location = useLocation();
+const store = useStore();
+await store.doRequest();
 
-const currentLocation = await location.getLocation();
 const title = computed(() => t('welcome'));
-
 </script>
 
 <i18n lang="json">
